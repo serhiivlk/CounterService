@@ -46,12 +46,15 @@ class CounterService : Service() {
 
             var currentValue = store.currentCounterValue
 
-            while (isActive) {
-                delay(COUNTER_DELAY)
-                currentValue += 1
+            try {
+                while (isActive) {
+                    delay(COUNTER_DELAY)
+                    currentValue += 1
 
+                    sendCounterChangedValueBroadcast(currentValue)
+                }
+            } finally {
                 store.currentCounterValue = currentValue
-                sendCounterChangedValueBroadcast(currentValue)
             }
         }
 
