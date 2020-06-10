@@ -1,7 +1,8 @@
-package com.fuun.counter
+package com.fuun.counter.ui.main
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.fuun.counter.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
