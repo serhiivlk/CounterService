@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">CounterService</string>
+
+    <string name="counter_has_never_started">The counter has never started</string>
+    <string name="counter_last_started">Last started: %s</string>
+    <string name="counter_stop">Stop</string>
+    <string name="counter_start">Start</string>
 </resources>

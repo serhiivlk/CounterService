@@ -3,12 +3,17 @@ package com.fuun.counter.receiver
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
+import android.content.IntentFilter
 import java.util.*
 
 private const val COUNTER_CHANGE_ACTION = "com.fuun.counter.STATE_CHANGE"
 
 private const val KEY_LAST_STARTED = "key_last_started"
 private const val KEY_CURRENT_VALUE = "key_current_value"
+
+fun Context.registerCounterReceiver(receiver: CounterBroadcastReceiver) {
+    registerReceiver(receiver, IntentFilter(COUNTER_CHANGE_ACTION))
+}
 
 fun Context.sendCounterStartedBroadcast(date: Date) {
     sendBroadcast(Intent(COUNTER_CHANGE_ACTION).apply {
